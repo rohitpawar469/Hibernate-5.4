@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<hibernate-mapping package="com.mtml.entities"> 
+	<class name="Order" table="orders" >
+		<id name="orderNo" column="order_no">
+			<generator class="increment" />
+		</id>
+	<property name="description" />
+	<property name="orderedDate" column="ordered_date" />
+	<property name="customerName" column="customer_name" />
+	<property name="amount" />
+	<list name="products" table="order_products">
+		<key column="order_no" />
+		<list-index column="product_seq_no" base="1" />
+		<many-to-many column="product_no" class="Product"></many-to-many>
+	</list>
+	 
+	</class>
+</hibernate-mapping>
