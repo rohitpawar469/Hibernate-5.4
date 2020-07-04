@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<!-- Generated 6 Jun, 2020 9:08:50 AM by Hibernate Tools 3.5.0.Final -->
+<hibernate-mapping package="com.tpcc.entities">
+    <union-subclass name="AccidentalInsurancePlan" extends="InsurancePlan" table="accidental_Insurance_Plan">
+   		<property name="coverageType" column="coverage_Type" />
+		<property name="internationalCoverage" column="international_Coverage" />
+		<property name="travelType" column="travel_Type" />  
+    </union-subclass>
+</hibernate-mapping>
