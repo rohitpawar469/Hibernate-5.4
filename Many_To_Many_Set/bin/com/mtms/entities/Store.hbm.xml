@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<hibernate-mapping package="com.mtms.entities"> 
+	<class name="Store" table="store">
+		<id name="storeNo" column="store_no">
+			<generator class="increment"></generator>
+		</id>
+	<property name="storeName" column="store_name" />
+	<property name="mobileNo" column="mobile_no" />
+	<property name="emailAddress" column="email_address" />
+	<property name="location" />
+		<set name="products" table="store_products">
+			<key column="store_no" ></key>
+			<many-to-many column="product_no" class="Product" />
+		</set> 
+	</class> 
+</hibernate-mapping>
