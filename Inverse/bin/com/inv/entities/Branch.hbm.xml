@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<hibernate-mapping package="com.inv.entities">
+	<class name="Branch" table="branch">
+		<id name="branchNo" column="branch_no">
+			<generator class="increment"></generator>
+		</id>
+	<property name="branchName" column="branch_name" />
+	<property name="organisationName" column="organisation_name" />
+	<property name="contactNo" column="contact_no" />
+	<property name="emailAddress" column="email_address" />
+	<property name="location" />
+	
+	<set name="branchStaff" inverse="false">
+		<key column="branch_no" not-null="false" />
+		<one-to-many class="Staff"/>
+		</set>
+	</class> 
+</hibernate-mapping>
