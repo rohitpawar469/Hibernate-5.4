@@ -1,0 +1,14 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<!-- Generated 1 Mar, 2020 12:16:16 AM by Hibernate Tools 3.5.0.Final -->
+<hibernate-mapping package="com.flc.entities">
+	<class name="Merchant" table="merchant">
+		<id name="merchantNo" column="merchant_no"></id>
+		<property name="licenseNo" column="license_no" />
+		<property name="merchantName" column="merchant_name" />
+		<property name="ownerName" column="owner_name" />
+		<property name="merchantRegistrationDate" column="merchant_registration_date" />
+		<property name="status"></property>	
+	</class>
+</hibernate-mapping>
