@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<hibernate-mapping package="com.oto.entities">
+	<class name="DeliveryNote" table="delivery_note">
+		<id name="awbNo" column="awb_no">
+			<generator class="foreign">
+				<param name="property">parcel</param>
+			</generator>		
+		</id>
+		<property name="deliveryDate" column="delivery_date" />
+		<property name="deliveredBy" column="delivered_by" />
+		<property name="deliveredTo" column="delivered_to" />
+		<property name="mobileNo" column="mobile_no" />
+		<property name="comments" />
+		<one-to-one name="parcel" class="Parcel" ></one-to-one>
+	</class>
+	
+	
+</hibernate-mapping>
