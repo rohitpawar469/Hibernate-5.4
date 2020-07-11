@@ -1,5 +1,7 @@
 package com.cascade.test;
 
+import java.util.Date;
+import java.util.HashSet;
 import java.util.Set;
 
 import org.hibernate.Session;
@@ -25,6 +27,43 @@ public class CASCADETest {
 		
 		try
 		{
+			sessionFactory=SessionFactoryRegistry.getSessionFactory();
+			session=sessionFactory.openSession();
+			transaction=session.beginTransaction();
+			
+			assignedComplaints=new HashSet<>();
+			
+			complaint=new Complaint();
+			
+			complaint.setTitle("Phone not switching on");
+			complaint.setDescription("Not Working");
+			complaint.setPriority(1);
+			complaint.setSeverity(1);
+			complaint.setReportedDate(new Date());
+			complaint.setStatus("open");
+			
+			// without cascade save-update we should save the compliant
+		
+			assignedComplaints.add(complaint);
+			
+			complaint.setTitle("Screen Damaged");
+			complaint.setDescription("Physical Damaged");
+			complaint.setPriority(2);
+			complaint.setSeverity(3);
+			complaint.setReportedDate(new Date());
+			complaint.setStatus("open");
+			
+			assignedComplaints.add(complaint);
+			
+			csr=new Csr();
+			
+			csr.setFullName("Jitesh Sonar");
+			csr.setDesignation("Junior");
+			csr.setExperience(2);
+			csr.setMobileNo("123456");
+			csr.setAssignedComplaints(assignedComplaints);
+			
+			session.save(csr);
 			
 			flag=true;
 		}
