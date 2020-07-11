@@ -61,18 +61,21 @@ public class CASCADETest {
 			 */
 			 
 			
-			csr=session.get(Csr.class, 1);
-			complaint=new Complaint();
-			complaint.setTitle("SIgnal Drop");
-			complaint.setDescription("");
-			complaint.setPriority(9);
-			complaint.setSeverity(8);
-			complaint.setReportedDate(new Date());
-			complaint.setStatus("urgent");
-			csr.getAssignedComplaints().add(complaint);
-			session.update(csr);
+			/*
+			 * csr=session.get(Csr.class, 1); complaint=new Complaint();
+			 * complaint.setTitle("SIgnal Drop"); complaint.setDescription("");
+			 * complaint.setPriority(9); complaint.setSeverity(8);
+			 * complaint.setReportedDate(new Date()); complaint.setStatus("urgent");
+			 * csr.getAssignedComplaints().add(complaint); session.update(csr);
+			 */
 			
-			
+
+			  csr=session.get(Csr.class, 1);
+			  complaint=csr.getAssignedComplaints().iterator().next();
+			  csr.setExperience(5);
+			  complaint.setSeverity(6);
+			  session.update(csr);
+			  
 			
 			flag=true;
 		}
