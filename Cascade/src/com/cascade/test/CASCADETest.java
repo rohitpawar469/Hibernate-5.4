@@ -35,6 +35,7 @@ public class CASCADETest {
 			  assignedComplaints=new HashSet<>();
 			  
 			  complaint=new Complaint();
+			  csr=new Csr();
 			  
 			/*
 			 * complaint.setTitle("Phone not switching on");
@@ -75,8 +76,15 @@ public class CASCADETest {
 			 * csr.setExperience(5); complaint.setSeverity(6); session.update(csr);
 			 */
 			  
-			csr=session.get(Csr.class, 1);
-			session.delete(csr);
+			/*
+			 * csr=session.get(Csr.class, 1); session.delete(csr);
+			 */
+			 
+			  csr=session.get(Csr.class, 1);
+			  complaint=session.get(Complaint.class, 1);
+			  csr.getAssignedComplaints().remove(complaint);
+			  session.update(csr);
+			  
 			  
 			  
 			flag=true;
