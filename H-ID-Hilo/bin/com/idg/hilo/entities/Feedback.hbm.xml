@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<!-- Generated 6 Mar, 2020 1:33:58 PM by Hibernate Tools 3.5.0.Final -->
+<hibernate-mapping package="com.idg.hilo.entities"> 
+   <class name="Feedback" table="feedbacks1">
+   		<id name="feedbackNo" column="feedback_no">
+   			<generator class="hilo">
+   				<!-- <param name="table">feedback_unique_key</param>
+   				<param name="column">feedback_next_hi</param> -->
+   				<param name="max_lo">5</param>
+   			</generator>
+  	   </id>
+   <property name="feedbackName" column="feedback_name"/>
+   <property name="userName" column="user_name"/>
+   <property name="description"></property>
+   <property name="productName" column="product_name"/>
+   <property name="rating"/>
+   </class>
+</hibernate-mapping>
