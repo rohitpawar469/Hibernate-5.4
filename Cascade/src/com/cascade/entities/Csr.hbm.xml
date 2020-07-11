@@ -11,7 +11,7 @@
 		<property name="experience" />
 		<property name="mobileNo" column="mobile_no" />
 		
-		<set name="assignedComplaints" cascade="save-update">
+		<set name="assignedComplaints">
 		<key column="csr_no" not-null="false" />
 		<one-to-many class="Complaint" />
 		</set>

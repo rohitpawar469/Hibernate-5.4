@@ -68,15 +68,17 @@ public class CASCADETest {
 			 * complaint.setReportedDate(new Date()); complaint.setStatus("urgent");
 			 * csr.getAssignedComplaints().add(complaint); session.update(csr);
 			 */
-			
 
-			  csr=session.get(Csr.class, 1);
-			  complaint=csr.getAssignedComplaints().iterator().next();
-			  csr.setExperience(5);
-			  complaint.setSeverity(6);
-			  session.update(csr);
+			/*
+			 * csr=session.get(Csr.class, 1);
+			 * complaint=csr.getAssignedComplaints().iterator().next();
+			 * csr.setExperience(5); complaint.setSeverity(6); session.update(csr);
+			 */
 			  
-			
+			csr=session.get(Csr.class, 1);
+			session.delete(csr);
+			  
+			  
 			flag=true;
 		}
 		finally 
