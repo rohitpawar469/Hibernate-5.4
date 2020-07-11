@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<!-- Generated 23 Jun, 2020 11:34:46 AM by Hibernate Tools 3.5.0.Final -->
+<hibernate-mapping package="com.otml.entities">
+    <class name="WelfareScheme" table="welfare_scheme">
+    	<id name="schemeNo" column="scheme_no">
+    		<generator class="increment"></generator>
+    	</id>
+    	<property name="schemeName" column="scheme_name" />
+    	<property name="launchedDate" column="launched_date" />
+    	<property name="criteria" />
+    	<property name="category" />
+    	<property name="duration" />
+    	
+    	<list name="applicants">
+    		<key column="scheme_no" not-null="false" />
+    		<list-index column="applied_serial_no"  base="1"/>
+    		<one-to-many class="Applicant"/>	
+    	</list>
+    </class>
+</hibernate-mapping>

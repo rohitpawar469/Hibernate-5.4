@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<!-- Generated 23 Jun, 2020 11:34:46 AM by Hibernate Tools 3.5.0.Final -->
+<hibernate-mapping package="com.otml.entities">
+	<class name="Applicant" table="applicant">
+		<id name="applicantNo" column="applicant_no">
+			<generator class="increment"></generator>
+		</id>
+		<property name="applicantName" column="applicant_name"></property>
+		<property name="dob" />
+		<property name="gender" />
+		<property name="mobileNo" column="mobile_no" />
+		<property name="aadharNo" column="aadhar_no"></property>	
+	</class>
+</hibernate-mapping>
