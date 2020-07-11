@@ -1,0 +1,18 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<!-- Generated 30 Jan, 2020 3:55:21 PM by Hibernate Tools 3.5.0.Final -->
+<hibernate-mapping package="com.fh.entities">
+    <class name="Store" table="store">
+        <id name="storeNo" column="store_number" />
+        <property name="storeName" column="store_name"></property>
+        <property name="contactNo" column="contact_number"></property>
+        <property name="emailAddress" column="email_address"></property>
+        <property name="addressLine1" column="address_line1"></property>
+        <property name="addressLine2" column="address_line2"></property>
+        <property name="city" column="city"></property>
+        <property name="state" column="state"></property>
+        <property name="zip" column="zip"></property>
+        <property name="country" column="country"></property>           
+    </class>
+</hibernate-mapping>
