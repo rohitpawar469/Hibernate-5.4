@@ -1,0 +1,14 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<!-- Generated 1 Feb, 2020 11:01:01 PM by Hibernate Tools 3.5.0.Final -->
+<hibernate-mapping package="com.tm.entities">
+	<class name="Product" table="product">
+	<id name="productNo" column="product_number"></id>
+	<property name="productName" column="product_name"></property>
+	<property name="description" column="description"></property>
+	<property name="cost" column="cost"></property>
+	<property name="manufacturedDate" column="manufactured_date"></property>
+	<property name="warranty" column="warrenty_years"></property>
+	</class>
+</hibernate-mapping>
