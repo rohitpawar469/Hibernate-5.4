@@ -11,6 +11,7 @@
 	<property name="feedbackPostedDate" column="feedback_posted_date" />
 	<property name="feedbackUserName" column="feedback_user_name" />
 	
-	<many-to-one name="product" column="product_no" not-null="true" />
+	<many-to-one name="product" column="product_no" not-null="true" 
+	cascade="all"/>
 	</class>
 </hibernate-mapping>
