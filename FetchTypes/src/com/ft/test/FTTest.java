@@ -2,8 +2,10 @@ package com.ft.test;
 
 import java.util.Date;
 import java.util.HashSet;
+import java.util.List;
 import java.util.Set;
 
+import org.hibernate.Query;
 import org.hibernate.Session;
 import org.hibernate.SessionFactory;
 import org.hibernate.Transaction;
@@ -62,9 +64,21 @@ public class FTTest {
 			 */
 			
 			
-			product=session.get(Product.class, 6);
-			System.out.println("Product Name :"+product.getProductName());
+			/*
+			 * product=session.get(Product.class, 6);
+			 * System.out.println("Product Name :"+product.getProductName());
+			 */
 			
+			Query<Product> query=session.createQuery("from Product");
+			List<Product> products=query.list();
+			for (Product prod : products)
+			{
+				Set<Feedback> fbs=prod.getFeedbacks();
+				for (Feedback fb : fbs)
+				{
+					System.out.println(fb.getRating());
+				}
+			}
 			
 			flag=true;
 		} finally {
