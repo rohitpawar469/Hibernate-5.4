@@ -11,7 +11,7 @@
       <property name="manufacturer" />
       <property name="price" />
 		
-	  <set name="feedbacks" inverse="true">
+	  <set name="feedbacks" inverse="true" fetch="join">
 	  	<key column="product_no" not-null="true"/>
 	  	<one-to-many class="Feedback"/>
 	  </set>      
