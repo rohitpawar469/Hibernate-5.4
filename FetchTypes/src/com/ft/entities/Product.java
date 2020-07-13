@@ -1,6 +1,7 @@
 package com.ft.entities;
 
 import java.io.Serializable;
+import java.util.Set;
 
 public class Product implements Serializable {
 	protected int productNo;
@@ -8,7 +9,8 @@ public class Product implements Serializable {
 	protected String description;
 	protected String manufacturer;
 	protected double price;
-
+	Set<Feedback> feedbacks;
+	
 	public int getProductNo() {
 		return productNo;
 	}
@@ -47,6 +49,14 @@ public class Product implements Serializable {
 
 	public void setPrice(double price) {
 		this.price = price;
+	}
+
+	public Set<Feedback> getFeedbacks() {
+		return feedbacks;
+	}
+
+	public void setFeedbacks(Set<Feedback> feedbacks) {
+		this.feedbacks = feedbacks;
 	}
 
 	@Override
