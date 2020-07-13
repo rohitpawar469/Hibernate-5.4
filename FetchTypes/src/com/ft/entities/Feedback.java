@@ -11,27 +11,56 @@ public class Feedback implements Serializable
 	protected Date feedbackPostedDate;
 	protected String feedbackUserName;
 	protected Product product;
-	
-	
+		
 	public int getFeedbackNo() {
 		return feedbackNo;
 	}
+
+	public void setFeedbackNo(int feedbackNo) {
+		this.feedbackNo = feedbackNo;
+	}
+
 	public String getComments() {
 		return comments;
 	}
+
+	public void setComments(String comments) {
+		this.comments = comments;
+	}
+
 	public int getRating() {
 		return rating;
 	}
+
+	public void setRating(int rating) {
+		this.rating = rating;
+	}
+
 	public Date getFeedbackPostedDate() {
 		return feedbackPostedDate;
 	}
+
+	public void setFeedbackPostedDate(Date feedbackPostedDate) {
+		this.feedbackPostedDate = feedbackPostedDate;
+	}
+
 	public String getFeedbackUserName() {
 		return feedbackUserName;
 	}
+
+	public void setFeedbackUserName(String feedbackUserName) {
+		this.feedbackUserName = feedbackUserName;
+	}
+
+	
 	public Product getProduct() {
 		return product;
 	}
-	
+
+	public void setProduct(Product product) {
+		this.product = product;
+	}
+
 	@Override
 	public int hashCode() {
 		final int prime = 31;
